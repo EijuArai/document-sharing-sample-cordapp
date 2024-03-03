@@ -1,0 +1,39 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="R3.Corda" id="document_schema">
+        <createTable tableName="document_states">
+            <column name="output_index" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="transaction_id" type="NVARCHAR(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="proposer" type="NVARCHAR(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="consenter" type="NVARCHAR(64)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="document_title" type="NVARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="document_type" type="NVARCHAR(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="comments" type="NVARCHAR(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="version_no" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="update_time" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="linear_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
